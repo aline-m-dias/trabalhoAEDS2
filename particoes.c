@@ -70,7 +70,7 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         int i = 0;
         while (!feof(arq)) {
             /*faz a leitura M regitros (funcionario) para a memoria*/
-            fseek(arq, (reg) * tamanho_registro(), SEEK_SET);
+            fseek(arq, (cont) * tamanho_registro(), SEEK_SET);
             vetor[i] = le_funcionario(arq);
             i++;
             cont++;
@@ -83,17 +83,41 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
             M = i;
         }
 
-        /*Selecionar, no array em memória, o registro (funcionario) r com menor chave*/
+        //Selecionar, no array em memória, o registro (funcionario) r com menor chave
 
-        TFunc menor= vetor[0];
+        TFunc *menor= vetor[0];
         for (int j=0; j<M; j++){
             if (vetor[j]->cod < chave){
-                if (vetor[j]->cod <  menor){
-                    menor=vetor[j];
-            }
-
+                if (vetor[j]->cod < menor->cod){
+                    menor= vetor[j];
+                }
             }
         }
 
-    }
+        //Gravar o registro r na partição de saída
+
+        char *nome_particao = nome_arquivos_saida->nome;
+        nome_arquivos_saida = nome_arquivos_saida->prox;
+
+        FILE *particao;
+        if ((particao = fopen(nome_particao, "wb+")) == NULL) {
+            printf("Erro criar arquivo de saida\n");
+        } else {
+
+            fseek(particao, 0 * tamanho_registro(), SEEK_SET);
+            salva_funcionario(menor, particao);
+            imprime_funcionario(menor);
+            fclose(particao);
+        }
+
+      //Substituir, no array em memória, o registro r pelo próximo registro do arquivo de entrada
+      for (int i=0; i<M; i++){
+        if (vetor[i]->cod == menor->cod){
+            vetor[i] = arq;
+        }
+      }
+
+
+}
+
 }
