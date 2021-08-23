@@ -61,4 +61,39 @@ void classificacao_interna(FILE *arq, Lista *nome_arquivos_saida, int M, int nFu
 
 void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, int n){
     /*PARTE 1 TRABALHO*/
+    rewind(arq); //posiciona cursor no inicio do arquivo
+
+    int cont= 0; //contador de registro funcionario
+    int chave= INT_MAX;
+    while (cont != nFunc){
+        TFunc *vetor[M]; // vetor para armazenar m registro do arquivo (funcionário)
+        int i = 0;
+        while (!feof(arq)) {
+            /*faz a leitura M regitros (funcionario) para a memoria*/
+            fseek(arq, (reg) * tamanho_registro(), SEEK_SET);
+            vetor[i] = le_funcionario(arq);
+            i++;
+            cont++;
+            if(i>=M){
+                break;
+            }
+        }
+        //precisa ajustar tamanho M caso arquivo tenha terminado antes do vetor
+        if (i != M) {
+            M = i;
+        }
+
+        /*Selecionar, no array em memória, o registro (funcionario) r com menor chave*/
+
+        TFunc menor= vetor[0];
+        for (int j=0; j<M; j++){
+            if (vetor[j]->cod < chave){
+                if (vetor[j]->cod <  menor){
+                    menor=vetor[j];
+            }
+
+            }
+        }
+
+    }
 }
