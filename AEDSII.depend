@@ -258,3 +258,153 @@
 1615750884 source:/home/janniele/Dropbox/Docente-UFOP/Aulas20201_Remoto/AEDS2/moodle/Pratica/TP/pilha.c
 	"pilha.h"
 
+1615750035 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\funcionario.c
+	<stdlib.h>
+	<string.h>
+	"funcionarios.h"
+
+1615749978 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\funcionarios.h
+	<stdio.h>
+
+1615751709 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\lista.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lista.h"
+
+1615751750 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\lista.h
+
+1615751784 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\manipulacao_arquivos.c
+	<stdlib.h>
+	"manipulacao_arquivos.h"
+	"funcionarios.h"
+	"math.h"
+
+1615751767 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\manipulacao_arquivos.h
+	<stdio.h>
+
+1629724085 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\particoes.c
+	"funcionarios.h"
+	<stdlib.h>
+	<limits.h>
+	"particoes.h"
+
+1615819418 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\particoes.h
+	<stdio.h>
+	"lista.h"
+
+1615750279 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\intercalacao.c
+	"intercalacao.h"
+	"funcionarios.h"
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+
+1615751144 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\intercalacao.h
+	"lista.h"
+	"pilha.h"
+
+1629724096 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\pilha.h
+	"funcionarios.h"
+
+1615750884 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\pilha.c
+	"pilha.h"
+
+1615751645 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\arvore_binaria.c
+	"arvore_binaria.h"
+
+1629724107 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\arvore_binaria.h
+	<stdio.h>
+	<stdlib.h>
+	"funcionarios.h"
+
+1615815844 source:c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\main.c
+	<stdlib.h>
+	"ordenacao_busca.h"
+	"lista.h"
+	"particoes.h"
+	"intercalacao.h"
+	"arvore_binaria.h"
+
+1613427796 c:\users\aline\onedrive\documentos\aeds2\trabalho\trabalhoaeds2\ordenacao_busca.h
+	<stdio.h>
+	"funcionarios.h"
+
+1615751645 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvore_binaria.c
+	"arvore_binaria.h"
+
+1629724107 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvore_binaria.h
+	<stdio.h>
+	<stdlib.h>
+	"funcionarios.h"
+
+1615749978 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\funcionarios.h
+	<stdio.h>
+
+1615750035 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\funcionario.c
+	<stdlib.h>
+	<string.h>
+	"funcionarios.h"
+
+1615750279 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
+	"intercalacao.h"
+	"funcionarios.h"
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+
+1615751144 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.h
+	"lista.h"
+	"pilha.h"
+
+1615751750 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\lista.h
+
+1629724096 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\pilha.h
+	"funcionarios.h"
+
+1615751709 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\lista.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lista.h"
+
+1615815844 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
+	<stdlib.h>
+	"ordenacao_busca.h"
+	"lista.h"
+	"particoes.h"
+	"intercalacao.h"
+	"arvore_binaria.h"
+
+1613427796 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\ordenacao_busca.h
+	<stdio.h>
+	"funcionarios.h"
+
+1615819418 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
+	<stdio.h>
+	"lista.h"
+
+1615751784 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\manipulacao_arquivos.c
+	<stdlib.h>
+	"manipulacao_arquivos.h"
+	"funcionarios.h"
+	"math.h"
+
+1615751767 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\manipulacao_arquivos.h
+	<stdio.h>
+
+1629724119 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\ordenacao_busca.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"funcionarios.h"
+
+1629724085 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
+	"funcionarios.h"
+	<stdlib.h>
+	<limits.h>
+	"particoes.h"
+
+1615750884 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\pilha.c
+	"pilha.h"
+
