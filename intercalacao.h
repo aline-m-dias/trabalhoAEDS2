@@ -11,6 +11,7 @@ typedef struct vetor{
     FILE *f;
 }TVet;
 
+
 /*Algoritmo de intercalacao de particoes básico, recebe
 o nome do arquivo de saída, o número de partições a serem intercaladas
 e uma lista com os nomes das partições de entrada a serem lidas.*/

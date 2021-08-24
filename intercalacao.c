@@ -87,5 +87,33 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
 
 void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_arquivo_saida, int num_p){
     //implementar segunda parte do trabalho
+    int qtdEntrada = num_p; //variavel que contém a quantidade dos arquivos de entrada
+    FILE *out; //declara ponteiro para arquivo
+
+    //abre arquivo de saida para escrita
+    if ((out = fopen(nome_arquivo_saida, "wb")) == NULL) {
+        printf("Erro ao abrir arquivo de saída\n");
+        return;
+    } else {
+        printf("Iniciando intercalação com árvore de vencedores\n");
+    }
+    TNoA **arvore = malloc(qtdEntrada * sizeof (TNoA*));
+    TFunc **particoes = malloc(nFunc * sizeof(TFunc*));
+
+    //laço encaixado para a criação da árvore
+    for(int i =0; i < qtdEntrada; i++){
+        TFunc *funcionario = pop(pilha[i], 0, &vetTop[i]);
+        particoes[funcionario->cod] = funcionario;
+        TNoA *no = criaNo_arvore_binaria(funcionario ->cod, -1);//Verificar o significado de rrn, que nesse caso é o -1
+        no->pilha = i;
+        arvore[i] = no;
+    }
+
+    TNoA *paiDeTodos;
+    TNoA **pai = malloc(qtdEntrada * sizeof (TNoA*));
+
+    free(arvore);
+    free(particoes);
+
 }
 
