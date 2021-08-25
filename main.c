@@ -11,8 +11,11 @@
 #include "particoes.h"
 #include "intercalacao.h"
 #include "arvore_binaria.h"
+#include <locale.h>
 
 int menu(){
+    setlocale (LC_ALL, "Portuguese");
+
     int op;
 
     printf("\n\n**************MENU************** \n\nBASE DE DADOS\n");
@@ -130,6 +133,7 @@ int main(){
                 if(crioulistadenomes){
                     printf("\n\nGerando partições, utilizando o método selecao natural.\n");
                     selecao_natural(arq, nomes, nElementos, nFunc,1, &nParticoes);
+                    printf("\n\n Total de %d partições geradas.\n", nParticoes);
 
                     //salvando o ponteiro para o início da lista de nomes
                     prox = nomes;

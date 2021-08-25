@@ -368,13 +368,14 @@
 	<string.h>
 	"lista.h"
 
-1629897597 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
+1629923428 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
 	<stdlib.h>
 	"ordenacao_busca.h"
 	"lista.h"
 	"particoes.h"
 	"intercalacao.h"
 	"arvore_binaria.h"
+	<locale.h>
 
 1613427796 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\ordenacao_busca.h
 	<stdio.h>
@@ -399,7 +400,7 @@
 	<math.h>
 	"funcionarios.h"
 
-1629909526 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
+1629923114 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
 	"funcionarios.h"
 	<stdlib.h>
 	<limits.h>
