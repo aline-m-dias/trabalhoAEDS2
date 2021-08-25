@@ -346,14 +346,14 @@
 	<string.h>
 	"funcionarios.h"
 
-1615750279 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
+1629897541 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
 	"intercalacao.h"
 	"funcionarios.h"
 	<limits.h>
 	<stdio.h>
 	<stdlib.h>
 
-1615751144 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.h
+1629897273 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.h
 	"lista.h"
 	"pilha.h"
 
@@ -368,7 +368,7 @@
 	<string.h>
 	"lista.h"
 
-1615815844 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
+1629897597 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
 	<stdlib.h>
 	"ordenacao_busca.h"
 	"lista.h"
@@ -380,7 +380,7 @@
 	<stdio.h>
 	"funcionarios.h"
 
-1615819418 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
+1629906407 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
 	<stdio.h>
 	"lista.h"
 
@@ -399,7 +399,7 @@
 	<math.h>
 	"funcionarios.h"
 
-1629724085 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
+1629909526 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
 	"funcionarios.h"
 	<stdlib.h>
 	<limits.h>
