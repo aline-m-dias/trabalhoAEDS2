@@ -4,11 +4,9 @@
 
 #include "particoes.h"
 
-
 void classificacao_interna(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc)
 {
     rewind(arq); //posiciona cursor no inicio do arquivo
-
 
     int reg = 0;
 
@@ -89,7 +87,17 @@ int menorChave(TFunc* vetor[], int indVetor)
     return menor;
 
 }
-
+//cria uma nova partição
+void criaParticao(Lista* nomes, int* nParticoes)
+{
+    if(nomes->prox == NULL)
+    {
+        char* novoNome = malloc( 5 * sizeof(char));
+        (*nParticoes)++;
+        sprintf(novoNome, "p%d.dat", *nParticoes);
+        nomes->prox = cria(novoNome, NULL);
+    }
+}
 
 
 void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, int n, int *nParticoes)
@@ -109,25 +117,27 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 
     while (cont != nFunc)
     {
-
+        printf("Entrou");
         int i=0;
         while (!feof(arq))
         {
-            /*faz a leitura M regitros (funcionario) para a memoria*/
+            //faz a leitura M regitros (funcionario) para a memoria
 
             vetor[i] = obtemFuncionario(arq, &cont); //recebe um funcionario
-            //imprime_funcionario(vetor[i]);
+            //imprime_funcionario(vetor[i]); /*imprime as m registros desordenados*/
             i++;
             if(i>=M)
             {
                 break;
             }
         }
+         printf("Entrou2");
+
         //precisa ajustar tamanho M caso arquivo tenha terminado antes do vetor
-        if (i != M)
+        if (indiceVetor < M)
         {
-            printf("ajustei o tamanho de M");
-            M = i;
+
+           continue; //o programa retorna no começo e ignorar as outras instruções
         }
 
         //Selecionar, no array em memória, o registro (funcionario) r com menor chave
@@ -139,13 +149,14 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 
         if (particaooatual== NULL)
         {
+
             char *nome=nomes->nome;
-            particaooatual= fopen(nome,"w+");
             printf("\n%s\n", nome);
+            particaooatual= fopen(nome,"w+");
 
-            /*nomeAtual = nomes;
+            /*nomeAtual = nomes;*/
+            criaParticao(nomes, nParticoes);
 
-            updatePartitionNames(nomes, numeroNomes);*/
             nomes= nomes->prox;
         }
         if (contParticao>=M)
@@ -159,13 +170,14 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         fseek(particaooatual, contParticao * tamanho_registro(), SEEK_SET);
         salva_funcionario(vetor[menor], particaooatual);
         imprime_funcionario(vetor[menor]);
+        fflush(stdout);
         /* nomeAtual->tamanho++;*/
         contParticao++;
 
 
         //Substituir, no array em memória, o registro r pelo próximo registro do arquivo de entrada
 
-        if(cont > nFunc)
+        if( !(cont < nFunc))
         {
             for (int i = menor; i<indiceVetor-1; i++)
             {
@@ -181,11 +193,12 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 
         if (vetor[menor]->cod < cod)
         {
+
             fseek(repositorio, (contRepositorio) * tamanho_registro(), SEEK_SET);
             salva_funcionario(vetor[menor], repositorio);
-            //imprime_funcionario(vetor[menor]);
+            imprime_funcionario(vetor[menor]);
             contRepositorio++;
-            if(cont > nFunc)
+            if( !(cont < nFunc))
             {
                 for (int i = menor; i<indiceVetor-1; i++)
                 {
@@ -207,8 +220,8 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         char *nome= nomes->nome;
         printf("\n%s\n", nome);
         particaooatual= fopen(nome, "w+");
-        /*nomeAtual = nomes;
-        updatePartitionNames(nomes, numeroNomes);*/
+        /*nomeAtual = nomes;*/
+        criaParticao(nomes, nParticoes);
         nomes=nomes->prox;
 
         //copiar os registros do reservatório para o array em memória
@@ -221,9 +234,9 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
             imprime_funcionario(vetor[j]);
             // nomeatual->tamanho++;
             //pode tentar fazer uma função
-            for (int j=menor; j< i-1; j++)
+            for (int j=menor; j< indiceVetor-1; j++)
             {
-                vetor[j]= vetor[i+1]; //substitui pelo proximo
+                vetor[j]= vetor[j+1]; //substitui pelo proximo
             }
             indiceVetor--;
             j++;
@@ -236,6 +249,7 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         }
 
         indiceVetor = 0;
+
         for (int j=0; j<contRepositorio; j++)
         {
             fseek(repositorio, j * tamanho_registro(), SEEK_SET);
@@ -243,6 +257,7 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
             imprime_funcionario(vetor[j]);
             indiceVetor++;
         }
+
         contRepositorio=0;
         fclose(particaooatual);
         particaooatual=NULL;
@@ -257,13 +272,14 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         contParticao=0;
     }
 
-    int contDaUltimaPart=0;
+    //int contDaUltimaPart=0;
 
     if (!(indiceVetor<= 0 && contRepositorio<=0)){
         //colocar no arquivo partição os itens que ainda estão no repositorio
         if(contRepositorio>0){
 
             char *nome=nomes->nome;
+            printf("\n%s\n", nome);
             particaooatual= fopen(nome, "w+");
             // nomeAtual = nomes;
             contParticao=0;
@@ -288,10 +304,12 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         //salva no repositorio
         if (indiceVetor>0)
         {
-            //    updatePartitionNames(nomes, numeroNomes);
+            criaParticao(nomes, nParticoes);
             nomes=nomes->prox;
             char *nome=nomes->nome;
+            printf("\n%s\n", nome);
             particaooatual= fopen(nome, "w+");
+            //nomeAtual = nomes;
             contParticao=0;
 
             for(int j=0; j<indiceVetor; j++)
@@ -314,6 +332,5 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 
     fclose(repositorio);
     free(vetor);
-
 
 }

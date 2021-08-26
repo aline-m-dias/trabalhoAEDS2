@@ -18,4 +18,5 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 /*retorna o indice do vetor que possui a menor chave*/
 int menorChave(TFunc* vetor [], int M);
 TFunc* obtemFuncionario(FILE *arq, int* cont);
+void criaParticao(Lista* nomes, int* nParticoes);
 #endif

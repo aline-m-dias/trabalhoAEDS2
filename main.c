@@ -14,7 +14,7 @@
 #include <locale.h>
 
 int menu(){
-    setlocale (LC_ALL, "Portuguese");
+
 
     int op;
 
@@ -25,7 +25,7 @@ int menu(){
     printf("\nDigite 3 se desejar imprimir o índice primário da base de funcionarios.");
 
 
-    printf("\n\nINTERPOLAÇÃO\n");
+    printf("\n\n INTERPOLAÇÃO \n");
     printf("\nDigite 4 para utilizar a estrutura de interpolação teste.");
     printf("\nDigite 5, 6  para gerar particões ordenadas utilizando, respectivamente, os métodos: classificação interna ou seleção natural.");
     printf("\nDigite 7 para criar uma pilha com o conteúdo das partições geradas.");
@@ -46,6 +46,7 @@ int menu(){
 
 int main(){
 
+    setlocale (LC_ALL, "Portuguese");
     /*criando um arquivo lógico para abir para leitura e escrita o arquivo binário*/
     FILE* arq = fopen("base_funcionarios.dat", "wb+");
     if(arq == NULL) {
@@ -179,7 +180,7 @@ int main(){
                 printf("Método a ser implementado na parte I do trabalho.\n");
                 if(criouparticoes){
                     if(crioupilhas){
-                        //intercalacao_arvore_de_vencedores(vetPilhas, vetTopo, "arquivo_intercalado.dat", nParticoes);
+                        intercalacao_arvore_de_vencedores(vetPilhas, vetTopo, "arquivo_intercalado.dat", nParticoes, nFunc);
                     }else printf("As pilhas das partições geradas não foram criadas, crie as pilhas utilizando as opções 7!!!\n");
                 }else printf("Partições não foram criadas, crie as partições utilizando as opções 5 ou 6  do menu!!!\n");
 
@@ -219,7 +220,7 @@ int main(){
             case (12):
                 printf("Método a ser implementado na parte II do trabalho.\n");
                 if(crioubase==1){
-                    ;//criar_arvore_B();
+                    //criar_arvore_B();
                 }else printf("Base de dados inexistente para ser ordenada, crie utilizando a opção 1 do menu!!!\n");
                 break;
             default:

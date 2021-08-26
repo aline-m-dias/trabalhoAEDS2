@@ -333,7 +333,7 @@
 1615751645 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvore_binaria.c
 	"arvore_binaria.h"
 
-1629724107 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvore_binaria.h
+1629942113 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvore_binaria.h
 	<stdio.h>
 	<stdlib.h>
 	"funcionarios.h"
@@ -346,18 +346,19 @@
 	<string.h>
 	"funcionarios.h"
 
-1629897541 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
+1629942355 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
 	"intercalacao.h"
 	"funcionarios.h"
 	<limits.h>
 	<stdio.h>
 	<stdlib.h>
+	"arvore_binaria.h"
 
-1629897273 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.h
+1629941930 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.h
 	"lista.h"
 	"pilha.h"
 
-1615751750 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\lista.h
+1629941282 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\lista.h
 
 1629724096 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\pilha.h
 	"funcionarios.h"
@@ -368,7 +369,7 @@
 	<string.h>
 	"lista.h"
 
-1629923428 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
+1629978034 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
 	<stdlib.h>
 	"ordenacao_busca.h"
 	"lista.h"
@@ -381,7 +382,7 @@
 	<stdio.h>
 	"funcionarios.h"
 
-1629906407 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
+1629934231 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
 	<stdio.h>
 	"lista.h"
 
@@ -400,7 +401,7 @@
 	<math.h>
 	"funcionarios.h"
 
-1629923114 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
+1629980242 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
 	"funcionarios.h"
 	<stdlib.h>
 	<limits.h>
@@ -408,4 +409,15 @@
 
 1615750884 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\pilha.c
 	"pilha.h"
+
+1629941282 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvoreb+.c
+	"arvoreb+.h"
+	"string.h"
+	"math.h"
+
+1629941015 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvoreb+.h
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"funcionarios.h"
 
