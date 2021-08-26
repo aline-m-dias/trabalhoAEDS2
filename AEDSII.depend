@@ -346,17 +346,36 @@
 	<string.h>
 	"funcionarios.h"
 
-<<<<<<< HEAD
-1629986179 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
-=======
-1629942355 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
->>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
+1629724119 D
+
+1630019377 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.c
 	"intercalacao.h"
 	"funcionarios.h"
 	<limits.h>
 	<stdio.h>
 	<stdlib.h>
 	"arvore_binaria.h"
+
+1629980242 da09c3c1823bd35dc407fa934208e4c1413fb
+	"intercalacao.h"
+	"funcionarios.h"
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+	"arvore_binaria.h"
+	<stdlib.h>
+	"ordenacao_busca.h"
+	"lista.h"
+	"particoes.h"
+	"intercalacao.h"
+	"arvore_binaria.h"
+	<locale.h>
+	<stdio.h>
+	"lista.h"
+	"funcionarios.h"
+	<stdlib.h>
+	<limits.h>
+	"particoes.h"
 
 1629941930 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\intercalacao.h
 	"lista.h"
@@ -373,28 +392,13 @@
 	<string.h>
 	"lista.h"
 
-<<<<<<< HEAD
-1630014668 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
-=======
 1629978034 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\main.c
->>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
-	<stdlib.h>
-	"ordenacao_busca.h"
-	"lista.h"
-	"particoes.h"
-	"intercalacao.h"
-	"arvore_binaria.h"
-	<locale.h>
 
 1613427796 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\ordenacao_busca.h
 	<stdio.h>
 	"funcionarios.h"
 
-<<<<<<< HEAD
-1629987549 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
-=======
-1629934231 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
->>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
+1630020049 c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.h
 	<stdio.h>
 	"lista.h"
 
@@ -413,11 +417,7 @@
 	<math.h>
 	"funcionarios.h"
 
-<<<<<<< HEAD
-1630013858 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
-=======
-1629980242 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
->>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
+1630019668 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\particoes.c
 	"funcionarios.h"
 	<stdlib.h>
 	<limits.h>
@@ -426,7 +426,7 @@
 1615750884 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\pilha.c
 	"pilha.h"
 
-1629941282 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvoreb+.c
+1630019668 source:c:\users\aline\onedrive\documentos\aeds2\trabalhoclone\trabalhoaeds2\arvoreb+.c
 	"arvoreb+.h"
 	"string.h"
 	"math.h"
