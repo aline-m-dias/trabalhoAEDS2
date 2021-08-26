@@ -46,7 +46,11 @@ int menu(){
 
 int main(){
 
+<<<<<<< HEAD
     setlocale(LC_ALL,"");
+=======
+    setlocale (LC_ALL, "Portuguese");
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
     /*criando um arquivo lógico para abir para leitura e escrita o arquivo binário*/
     FILE* arq = fopen("base_funcionarios.dat", "wb+");
     if(arq == NULL) {
@@ -222,7 +226,11 @@ int main(){
                 printf("Método a ser implementado na parte II do trabalho.\n");
                 printf("Criando a árvore B+");
                 if(crioubase==1){
+<<<<<<< HEAD
                      criar_arvore_B();
+=======
+                    //criar_arvore_B();
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
                 }else printf("Base de dados inexistente para ser ordenada, crie utilizando a opção 1 do menu!!!\n");
                 break;
             default:

@@ -117,7 +117,7 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 
     while (cont != nFunc)
     {
-
+        printf("Entrou");
         int i=0;
         while (!feof(arq))
         {
@@ -131,11 +131,20 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
                 break;
             }
         }
+<<<<<<< HEAD
 
 
         //enquanto o indice do vetor for menor que o numero de elementos M, voltar  no inicio
         if (indiceVetor < M)
         {
+=======
+         printf("Entrou2");
+
+        //precisa ajustar tamanho M caso arquivo tenha terminado antes do vetor
+        if (indiceVetor < M)
+        {
+
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
            continue; //o programa retorna no começo e ignorar as outras instruções
         }
 
@@ -148,11 +157,20 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         if (particaooatual == NULL)
         {
 
+<<<<<<< HEAD
             char *nome= nomes->nome;
             printf("\n%s\n", nome);
             particaooatual= fopen(nome,"w+");
 
             criaParticao(nomes, nParticoes); //cria a partição
+=======
+            char *nome=nomes->nome;
+            printf("\n%s\n", nome);
+            particaooatual= fopen(nome,"w+");
+
+            /*nomeAtual = nomes;*/
+            criaParticao(nomes, nParticoes);
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
 
             nomes= nomes->prox;
         }
@@ -171,6 +189,10 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         salva_funcionario(vetor[menor], particaooatual);
         imprime_funcionario(vetor[menor]);
         fflush(stdout);
+<<<<<<< HEAD
+=======
+        /* nomeAtual->tamanho++;*/
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
         contParticao++;
 
 
@@ -193,6 +215,7 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         // testa se chave deste último seja menor do que a chave recém gravada, gravá-lo no reservatório e substituir
         if (vetor[menor]->cod < cod)
         {
+
             fseek(repositorio, (contRepositorio) * tamanho_registro(), SEEK_SET);
             salva_funcionario(vetor[menor], repositorio);
             imprime_funcionario(vetor[menor]);
@@ -220,6 +243,10 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         char *nome= nomes->nome;
         printf("\n%s\n", nome);
         particaooatual= fopen(nome, "w+");
+<<<<<<< HEAD
+=======
+        /*nomeAtual = nomes;*/
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
         criaParticao(nomes, nParticoes);
         nomes=nomes->prox;
 
@@ -231,7 +258,12 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
             int menor= menorChave(vetor, indiceVetor);
             salva_funcionario(vetor[menor], particaooatual);
             imprime_funcionario(vetor[j]);
+<<<<<<< HEAD
 
+=======
+            // nomeatual->tamanho++;
+            //pode tentar fazer uma função
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
             for (int j=menor; j< indiceVetor-1; j++)
             {
                 vetor[j]= vetor[j+1]; //substitui pelo proximo
@@ -269,7 +301,13 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
         fclose(particaooatual);
         particaooatual=NULL;
         contParticao=0;
+<<<<<<< HEAD
     }//termina laço while
+=======
+    }
+
+    //int contDaUltimaPart=0;
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
 
     //verificamos se ainda existe registros no resotório
     if (!(indiceVetor<= 0 && contRepositorio<=0)){
@@ -307,7 +345,11 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
             char *nome=nomes->nome;
             printf("\n%s\n", nome);
             particaooatual= fopen(nome, "w+");
+<<<<<<< HEAD
 
+=======
+            //nomeAtual = nomes;
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
             contParticao=0;
 
             for(int j=0; j<indiceVetor; j++)

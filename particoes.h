@@ -19,7 +19,10 @@ void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, in
 int menorChave(TFunc* vetor [], int M);
 /*obtem um funcionario*/
 TFunc* obtemFuncionario(FILE *arq, int* cont);
+<<<<<<< HEAD
 
 /*cria uma nova partição*/
+=======
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
 void criaParticao(Lista* nomes, int* nParticoes);
 #endif

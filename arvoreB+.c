@@ -249,8 +249,11 @@ void criar_indice(FILE *arq, TNo **nos, int tam)
     }
 }
 
+<<<<<<< HEAD
 //void imprimir_indice(char* nomeArq, int tam)
 //void imprimir_indice(char* nomeArq, int tam)
+=======
+>>>>>>> 160da09c3c1823bd35dc407fa934208e4c1413fb
 void imprimir_indice(char* nomeArq, int tam)
 {
     FILE* arq = fopen(nomeArq, "rb");
