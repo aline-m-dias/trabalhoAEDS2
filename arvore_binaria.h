@@ -11,8 +11,11 @@ o valor rrn/byteoffset no arquivo, o ponteiro para subárvore à esquerda e à d
 typedef struct noA {
     int info;
     int rrn;
+    int pilha;
     struct noA *esq;
     struct noA *dir;
+    struct noA *pai;
+
 } TNoA;
 
 /* Cada nó da árvore binária externa armazena a informação do registro,

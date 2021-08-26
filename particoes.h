@@ -17,5 +17,9 @@ Fiquem a vontade para modificar a estrutura, foi uma sugestão.*/
 void selecao_natural(FILE *arq, Lista *nome_arquivos_saida, int M, int nFunc, int n, int *nParticoes);
 /*retorna o indice do vetor que possui a menor chave*/
 int menorChave(TFunc* vetor [], int M);
+/*obtem um funcionario*/
 TFunc* obtemFuncionario(FILE *arq, int* cont);
+
+/*cria uma nova partição*/
+void criaParticao(Lista* nomes, int* nParticoes);
 #endif

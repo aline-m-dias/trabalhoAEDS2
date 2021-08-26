@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "arvore_binaria.h"
 void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_particoes) {
 
     int fim = 0; //variavel que controla fim do procedimento
@@ -85,23 +85,29 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
     }
 }
 
-/*void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_arquivo_saida, int num_p){
+void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_arquivo_saida, int num_p, int nFunc){
     //implementar segunda parte do trabalho
     int qtdEntrada = num_p; //variavel que contém a quantidade dos arquivos de entrada
     FILE *out; //declara ponteiro para arquivo
 
     //abre arquivo de saida para escrita
-    if ((out = fopen(nome_arquivo_saida, "wb")) == NULL) {
-        printf("Erro ao abrir arquivo de saída\n");
-        return;
-    } else {
+    if ((out = fopen(nome_arquivo_saida, "wb")) /*== NULL*/) {
         printf("Iniciando intercalação com árvore de vencedores\n");
+       // printf("Erro ao abrir arquivo de saída\n");
+       // return;
+    } else {
+        //printf("Iniciando intercalação com árvore de vencedores\n");
+         printf("Erro ao abrir arquivo de saída\n");
+         return;
+
     }
+
     TNoA **arvore = malloc(qtdEntrada * sizeof (TNoA*));
-    TFunc **particoes = malloc(nFunc * sizeof(TFunc*));
+    TFunc **particoes = malloc( nFunc * sizeof(TFunc*));
 
     //laço encaixado para a criação da árvore
-    for(int i =0; i < qtdEntrada; i++){
+    for(int i =0; i <  num_p; i++){
+        printf("Entrei no laço");
         TFunc *funcionario = pop(pilha[i], 0, &vetTop[i]);
         particoes[funcionario->cod] = funcionario;
         TNoA *no = criaNo_arvore_binaria(funcionario ->cod, -1);//Verificar o significado de rrn, que nesse caso é o -1
@@ -118,7 +124,8 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
     int numNovoPai = 0;
     int contNo = 0;
 
-    while(1) {
+     while(1) {
+        printf("estou no while");
         TNoA **espacoLivre;
         int tamEspacoLivre;
         int numComparacoes;
@@ -183,7 +190,7 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
             if(numOperacoes == 0 ){
                 paiDeTodos = pai[0];
             }else{
-                paiDeTodos = paiNovo[0];
+                paiDeTodos = novoPai[0];
             }
             break;
         }
@@ -198,7 +205,9 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
         numElementos = numNovoPai;
         numNovoPai = 0;
         numOperacoes+=numOperacoes;
+
     }
+    printf("fim while");
 
     TNoA *atual = paiDeTodos;
 
@@ -219,7 +228,7 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
                 }
             }
         }
-    }
+
 
     // salvar funcionario no arquivo
     TFunc *funcionario = particoes[vencedor];
@@ -236,8 +245,8 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
         atual->info = funcionario->cod;
         particoes[funcionario->cod] = funcionario;
     }
-    
-    
+
+
     //adiciona os novos valores a árvore criada anteriormente
     while (atual->pai != NULL)
     {
@@ -264,11 +273,12 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
         }
 
     }
+    }
 
     free(arvore);
     free(particoes);
     free(pai);
     free(novoPai);
 
-}*/
+}
 

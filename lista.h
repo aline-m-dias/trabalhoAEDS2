@@ -4,6 +4,7 @@
 typedef struct Lista {
 	char *nome;
 	struct Lista *prox;
+	int tamanho;
 } Lista;
 
 /*imprime lista de nomes*/

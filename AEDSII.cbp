@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="arvoreB+.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arvoreB+.h" />
 		<Unit filename="arvore_binaria.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -67,10 +71,7 @@
 		</Unit>
 		<Unit filename="pilha.h" />
 		<Extensions>
-			<envvars />
-			<code_completion />
 			<lib_finder disable_auto="1" />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
