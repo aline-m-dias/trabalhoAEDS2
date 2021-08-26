@@ -111,9 +111,164 @@ void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_a
 
     TNoA *paiDeTodos;
     TNoA **pai = malloc(qtdEntrada * sizeof (TNoA*));
+    TNoA **novoPai = malloc(qtdEntrada * sizeof (TNoA*));
+    int numOperacoes = 0;
+    int numElementos = 0;
+    int numPais = 0;
+    int numNovoPai = 0;
+    int contNo = 0;
+
+    while(1) {
+        TNoA **espacoLivre;
+        int tamEspacoLivre;
+        int numComparacoes;
+        if (numOperacoes == 0) {
+            espacoLivre = arvore;
+            tamEspacoLivre = qtdEntrada;
+            numComparacoes = numElementos;
+        } else {
+            espacoLivre = pai;
+            tamEspacoLivre = numElementos;
+            numComparacoes = numNovoPai;
+        }
+        //criação dos nós da primeira iteração
+        for (int i = 0; i < tamEspacoLivre; i += 2) {
+            if (i + 1 == tamEspacoLivre) {
+                TNoA *no = criaNo_arvore_binaria(espacoLivre[i]->info, -1);
+                no->pilha = espacoLivre[i]->pilha;
+                no->esq = espacoLivre[i];
+                no->dir = NULL;
+                no->esq->pai = no;
+                if (numOperacoes == 0) {
+                    pai[numElementos] = no;
+                    numElementos += numElementos;
+                } else {
+                    novoPai[numNovoPai] = no;
+                    numNovoPai += numNovoPai;
+                }
+                continue;
+            }
+            if (espacoLivre[i]->info < espacoLivre[i + 1]->info) {
+                TNoA *no = criaNo_arvore_binaria(espacoLivre[i]->info, -1);
+                no->pilha = espacoLivre[i]->pilha;
+                no->esq = espacoLivre[i];
+                no->dir = espacoLivre[i + 1];
+                no->esq->pai = no;
+                no->dir->pai = no;
+                if (numOperacoes == 0) {
+                    pai[numElementos] = no;
+                    numElementos += numElementos;
+                } else {
+                    novoPai[numNovoPai] = no;
+                    numNovoPai += numNovoPai;
+                }
+            } else {
+                TNoA *no = criaNo_arvore_binaria(espacoLivre[i + 1]->info, -1);
+                no->pilha = espacoLivre[i + 1]->pilha;
+                no->esq = espacoLivre[i];
+                no->dir = espacoLivre[i + 1];
+                no->esq->pai = no;
+                no->dir->pai = no;
+                if (numOperacoes == 0) {
+                    pai[numElementos] = no;
+                    numElementos += numElementos;
+                } else {
+                    novoPai[numNovoPai] = no;
+                    numNovoPai += numNovoPai;
+                }
+            }
+        }
+        //atrubui novos valores aos veotres pais
+        if (numComparacoes == 1){
+            if(numOperacoes == 0 ){
+                paiDeTodos = pai[0];
+            }else{
+                paiDeTodos = paiNovo[0];
+            }
+            break;
+        }
+        if (numComparacoes == 0){
+            numComparacoes += numComparacoes;
+            continue;
+        }
+        for (int j = 0; j < numNovoPai; j++)
+        {
+            pai[j] = novoPai[j];
+        }
+        numElementos = numNovoPai;
+        numNovoPai = 0;
+        numOperacoes+=numOperacoes;
+    }
+
+    TNoA *atual = paiDeTodos;
+
+    while (atual->info != INT_MAX){
+        int vencedor = paiDeTodos->info;
+        //percorre a árvore até encrontrar a folha do nó vencedor
+        while (atual->esq != NULL || atual->dir != NULL){
+            if (atual->esq != NULL){
+                if (atual->esq->info == vencedor){
+                    atual = atual->esq;
+                    continue;
+                }
+            }
+            if (atual->dir != NULL){
+                if (atual->dir->info == vencedor){
+                    atual = atual->dir;
+                    continue;
+                }
+            }
+        }
+    }
+
+    // salvar funcionario no arquivo
+    TFunc *funcionario = particoes[vencedor];
+    fseek(out, contNo * tamanho_registro(), SEEK_SET);
+    contNo += contNo;
+    salva_funcionario(funcionario, out);
+    int posicaoPilha = paiDeTodos->pilha;
+
+    funcionario = pop(pilha[posicaoPilha], 0, &vetTop[posicaoPilha]);
+    // printf("Retirou da pilha o %d\n", func->cod);
+    if (funcionario == NULL){
+        atual->info = INT_MAX;
+    }else{
+        atual->info = funcionario->cod;
+        particoes[funcionario->cod] = funcionario;
+    }
+    
+    
+    //adiciona os novos valores a árvore criada anteriormente
+    while (atual->pai != NULL)
+    {
+        atual = atual->pai;
+        if (atual->esq && atual->dir){
+            if (atual->esq->info < atual->dir->info){
+                atual->info = atual->esq->info;
+                atual->pilha = atual->esq->pilha;
+            }
+            else{
+                atual->info = atual->dir->info;
+                atual->pilha = atual->dir->pilha;
+            }
+        }else{
+            if (atual->esq != NULL){
+                atual->info = atual->esq->info;
+                atual->pilha = atual->esq->pilha;
+            }
+            else
+            {
+                atual->info = atual->dir->info;
+                atual->pilha = atual->dir->pilha;
+            }
+        }
+
+    }
 
     free(arvore);
     free(particoes);
+    free(pai);
+    free(novoPai);
 
 }
 
