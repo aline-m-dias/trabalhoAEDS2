@@ -11,8 +11,11 @@
 #include "particoes.h"
 #include "intercalacao.h"
 #include "arvore_binaria.h"
+#include <locale.h>
 
 int menu(){
+    setlocale (LC_ALL, "Portuguese");
+
     int op;
 
     printf("\n\n**************MENU************** \n\nBASE DE DADOS\n");
@@ -129,7 +132,8 @@ int main(){
             case (6):
                 if(crioulistadenomes){
                     printf("\n\nGerando partições, utilizando o método selecao natural.\n");
-                    selecao_natural(arq, nomes, nElementos, nFunc,1);
+                    selecao_natural(arq, nomes, nElementos, nFunc,1, &nParticoes);
+                    printf("\n\n Total de %d partições geradas.\n", nParticoes);
 
                     //salvando o ponteiro para o início da lista de nomes
                     prox = nomes;
@@ -175,7 +179,7 @@ int main(){
                 printf("Método a ser implementado na parte I do trabalho.\n");
                 if(criouparticoes){
                     if(crioupilhas){
-                        intercalacao_arvore_de_vencedores(vetPilhas, vetTopo, "arquivo_intercalado.dat", nParticoes);
+                        //intercalacao_arvore_de_vencedores(vetPilhas, vetTopo, "arquivo_intercalado.dat", nParticoes);
                     }else printf("As pilhas das partições geradas não foram criadas, crie as pilhas utilizando as opções 7!!!\n");
                 }else printf("Partições não foram criadas, crie as partições utilizando as opções 5 ou 6  do menu!!!\n");
 

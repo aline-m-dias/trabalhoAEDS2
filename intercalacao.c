@@ -85,7 +85,7 @@ void intercalacao_basico(char *nome_arquivo_saida, int num_p, Lista *nome_partic
     }
 }
 
-void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_arquivo_saida, int num_p){
+/*void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_arquivo_saida, int num_p){
     //implementar segunda parte do trabalho
     int qtdEntrada = num_p; //variavel que contém a quantidade dos arquivos de entrada
     FILE *out; //declara ponteiro para arquivo
@@ -270,5 +270,5 @@ void intercalacao_arvore_de_vencedores(TPilha **pilha, int *vetTop, char *nome_a
     free(pai);
     free(novoPai);
 
-}
+}*/
 
